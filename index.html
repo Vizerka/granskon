@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pl-PL" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GRAŃSKOn 2027 - hotelowy event planszówkowy dla fanów planszówek, karcianek, RPG i turniejów.">
+    <title>GRAŃSKOn 2027 - Konwent Planszówkowy!</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+
+    <script>
+        const savedTheme = localStorage.getItem("granskon-theme");
+        const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+
+        if (savedTheme) {
+            document.documentElement.dataset.theme = savedTheme;
+        } else if (prefersLight) {
+            document.documentElement.dataset.theme = "light";
+        }
+    </script>
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="index.html" class="logo-link" aria-label="Strona główna GRAŃSKOn">
+                <img src="logo.png" alt="GRAŃSKOn Logo" class="logo">
+            </a>
+
+            <div class="brand">
+                <p class="eyebrow">Styczeń 2027 - Eurohotel Baniocha</p>
+                <h1>GRAŃSKOn 2027</h1>
+            </div>
+
+            <nav class="site-nav" id="primaryNav" aria-label="Nawigacja główna">
+                <ul>
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="o-nas.html">O nas</a></li>
+                    <li><a href="index.html#zones">Strefy</a></li>
+                    <li><a href="index.html#tournaments">Turnieje</a></li>
+                    <li><a href="#" class="disabled-link" aria-disabled="true">Akredytacja - wkrótce</a></li>
+                    <li><a href="index.html#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <button class="theme-switch" id="themeToggle" type="button" aria-label="Zmień motyw" aria-pressed="true">
+                <span class="switch-track">
+                    <span class="switch-thumb"></span>
+                </span>
+                <span class="theme-label">Tryb ciemny</span>
+            </button>
+
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Otwórz menu" aria-controls="primaryNav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="hero section-card">
+            <div class="hero-content">
+                <p class="eyebrow">Hotelowy event planszówkowy</p>
+                <h2>Czym jest GRAŃSKOn?</h2>
+
+                <p>
+                    🎲 Lubisz planszówy?<br>
+                    Lubisz konwenty?<br>
+                    Chciał byś tłuc kogoś cały dzień w karciankę, przejść kilkugodzinną grę fabularną a potem powtórzyć to kolejnego dnia? Jeśli odpowiedziałeś "tak", to GRAŃSKOn jest hotelowym eventem tworzonym z myślą o Tobie! 🃏
+                </p>
+
+                <div class="cta-row">
+                    <a href="o-nas.html" class="button-link">Dowiedz się więcej</a>
+                    <a href="#" class="button-link secondary disabled-link" aria-disabled="true">Akredytacja - wkrótce</a>
+                </div>
+            </div>
+
+            <aside class="info-panel" aria-label="Podstawowe informacje">
+                <div class="info-box">
+                    <span>🗺 Miejsce</span>
+                    <strong>Eurohotel Baniocha</strong>
+                    <p>(Powiedzmy że to blisko Warszawy.)</p>
+                </div>
+
+                <div class="info-box">
+                    <span>🗓 Czas</span>
+                    <strong>Styczeń 2027</strong>
+                    <p>Na chwilę obecną nie mamy potwierdzonej daty.</p>
+                </div>
+
+                <div class="info-box accent-box">
+                    <span>🎲 Status</span>
+                    <strong>Więcej informacji niebawem</strong>
+                    <p>Ankieta dotycząca preferencji będzie dostępna wkrótce.</p>
+                </div>
+            </aside>
+        </section>
+
+        <section id="zones" class="section-block">
+            <div class="section-heading">
+                <p class="eyebrow">Planowane atrakcje</p>
+                <h2>Strefy grania</h2>
+            </div>
+
+            <div class="zone-grid">
+                <article class="zone-card">
+                    <div class="zone-icon">👥</div>
+                    <h3>Strefa PvP</h3>
+                    <p>
+                        Gry pojedynkowe dla równo dwóch graczy.
+                        Masz ziomka którego kochasz ale jeszcze bardziej kochasz zmiażdżyć go w planszówce? To strafa dla Ciebie.
+                    </p>
+                </article>
+
+                <article class="zone-card">
+                    <div class="zone-icon">🕑</div>
+                    <h3>Strefa gier czasochłonnych</h3>
+                    <p>
+                        Checie przez kilka godzin rozgrywać jedno rozdanie skomplikowanej planszówki, i potrzebujecie do tego ciszy i spokoju? Załatwione.
+                    </p>
+                </article>
+
+                <article class="zone-card">
+                    <div class="zone-icon">🍺</div>
+                    <h3>Strefa Party</h3>
+                    <p>
+                        Proste gry na dużą ilość graczy.
+                        Lubisz kontakt z ludźmi ale nie chcesz zaprzątać sobie głowy skomplikowanymi zasadami? No co tak stoisz, bierz to piwo i rzuć na stół kartę ze śmiesznym obrazkiem - ty też masz szansę wygrać!
+                    </p>
+                </article>
+
+                <article class="zone-card">
+                    <div class="zone-icon">🎲</div>
+                    <h3>Strefa Ogólna</h3>
+                    <p>
+                        Rozmaite gry przeznaczone zazwyczaj dla max 6 graczy. Wymagają więcej zaangażowania niż gry ze Strefy Party, (co NIE znaczy że wszystkie są skomplikowane).
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="tournaments" class="section-card">
+            <p class="eyebrow">Turnieje</p>
+            <h2>TURNIEJE 🃏</h2>
+            <p>
+                Chcesz poprowadzić turniej ze swojej ulubionej gry? Jeśli za wczasu zgłosisz się do nas, wpiszemy Twój turniej do harmonogramu atrakcji i postaramy się zapewnić nagrody dla zwycięzców!
+            </p>
+        </section>
+
+        <section id="contact" class="section-card">
+            <p class="eyebrow">Kontakt i aktualności</p>
+            <h2>Brzmi fajnie?</h2>
+            <p>
+                Chciał byś wiedzieć więcej? Śledź nasz kanał!
+            </p>
+            <p>
+                Ankieta dotycząca Waszych preferencji co do długości trwania eventu, jak i ceny akredytacji będzie niebawem dostępna.
+            </p>
+
+            <div class="contact-grid">
+                <div class="widget-box">
+                    <h3>Discord</h3>
+                    <p>Widget / link do Discorda - TBA.</p>
+                </div>
+
+                <div class="widget-box">
+                    <h3>Telegram</h3>
+                    <script async src="https://telegram.org/js/telegram-widget.js?23" data-telegram-post="granskon/6" data-width="100%" data-color="0284C7"></script>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2027 GRAŃSKOn - konwent planszówkowy.</p>
+    </footer>
+</body>
+</html>

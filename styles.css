@@ -99,6 +99,8 @@ button {
     font: inherit;
 }
 
+/* HEADER */
+
 .site-header {
     position: sticky;
     top: 0;
@@ -110,12 +112,12 @@ button {
 }
 
 .header-inner {
-    width: min(1180px, calc(100% - 32px));
+    width: min(1320px, calc(100% - 32px));
     min-height: var(--header-height);
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
     position: relative;
 }
 
@@ -135,13 +137,14 @@ button {
 }
 
 .brand {
-    min-width: 0;
+    min-width: 210px;
     flex: 1 1 auto;
 }
 
 .brand h1 {
-    font-size: clamp(1.45rem, 4vw, 2.5rem);
+    font-size: clamp(1.45rem, 3.2vw, 2.5rem);
     font-weight: 950;
+    white-space: nowrap;
 }
 
 .eyebrow {
@@ -153,10 +156,16 @@ button {
     text-transform: uppercase;
 }
 
+/* NAVBAR */
+
+.site-nav {
+    flex: 0 0 auto;
+}
+
 .site-nav ul {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -164,17 +173,21 @@ button {
 
 .site-nav a {
     display: inline-flex;
-    min-height: 42px;
+    height: 54px;
+    min-width: 96px;
     align-items: center;
     justify-content: center;
-    padding: 10px 14px;
+    padding: 0 16px;
     border: 1px solid var(--line);
     border-radius: 999px;
     background: var(--surface);
     color: var(--text);
     font-size: 0.94rem;
     font-weight: 800;
+    line-height: 1.1;
+    text-align: center;
     text-decoration: none;
+    white-space: nowrap;
     transition:
         transform 0.18s ease,
         background 0.18s ease,
@@ -188,6 +201,12 @@ button {
     border-color: color-mix(in srgb, var(--accent) 70%, var(--line));
     box-shadow: 0 10px 24px var(--shadow);
 }
+
+.site-nav .disabled-link {
+    min-width: 174px;
+}
+
+/* MOBILE NAV BUTTON */
 
 .nav-toggle {
     display: none;
@@ -223,12 +242,17 @@ button {
     transform: translateY(-6px) rotate(-45deg);
 }
 
+/* THEME SWITCH */
+
 .theme-switch {
     display: inline-flex;
+    height: 54px;
+    min-width: 154px;
+    flex: 0 0 auto;
     align-items: center;
+    justify-content: center;
     gap: 10px;
-    min-height: 46px;
-    padding: 7px 12px 7px 8px;
+    padding: 7px 14px 7px 8px;
     border: 1px solid var(--line);
     border-radius: 999px;
     background: var(--surface);
@@ -271,6 +295,8 @@ button {
 html[data-theme="light"] .switch-thumb {
     transform: translateX(22px);
 }
+
+/* LAYOUT */
 
 main {
     width: min(1180px, calc(100% - 32px));
@@ -504,7 +530,13 @@ button:focus-visible {
     outline-offset: 3px;
 }
 
-@media (max-width: 1080px) {
+/* MNIEJSZY DESKTOP / TABLET */
+
+@media (max-width: 1350px) {
+    .header-inner {
+        width: min(1180px, calc(100% - 32px));
+    }
+
     .site-nav {
         order: 5;
         width: 100%;
@@ -515,12 +547,23 @@ button:focus-visible {
         flex-wrap: wrap;
     }
 
+    .site-nav a {
+        height: 46px;
+        min-width: 104px;
+    }
+
+    .site-nav .disabled-link {
+        min-width: 174px;
+    }
+
     .zone-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-@media (max-width: 760px) {
+/* MOBILE */
+
+@media (max-width: 1350px) {
     :root {
         --header-height: 76px;
     }
@@ -541,6 +584,10 @@ button:focus-visible {
         border-radius: 16px;
     }
 
+    .brand {
+        min-width: 0;
+    }
+
     .brand h1 {
         font-size: 1.28rem;
     }
@@ -553,10 +600,13 @@ button:focus-visible {
 
     .nav-toggle {
         display: block;
+        order: 4;
     }
 
     .theme-switch {
+        order: 3;
         width: 46px;
+        min-width: 46px;
         height: 46px;
         justify-content: center;
         padding: 0;
@@ -585,6 +635,7 @@ button:focus-visible {
     .site-nav {
         display: none;
         position: absolute;
+        order: initial;
         top: calc(100% + 10px);
         left: 0;
         right: 0;
@@ -607,11 +658,15 @@ button:focus-visible {
         gap: 8px;
     }
 
-    .site-nav a {
+    .site-nav a,
+    .site-nav .disabled-link {
         width: 100%;
+        min-width: 0;
+        height: auto;
         justify-content: flex-start;
         padding: 13px 16px;
         border-radius: 18px;
+        text-align: left;
     }
 
     main {
@@ -642,6 +697,8 @@ button:focus-visible {
         grid-template-columns: 1fr;
     }
 }
+
+/* MAŁE TELEFONY */
 
 @media (max-width: 420px) {
     .brand .eyebrow {
